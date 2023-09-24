@@ -411,6 +411,8 @@ void RISCVPassConfig::addPreEmitPass2() {
   addPass(createUnpackMachineBundles([&](const MachineFunction &MF) {
     return MF.getFunction().getParent()->getModuleFlag("kcfi");
   }));
+
+  addPass(createRISCVDummyPass());
 }
 
 void RISCVPassConfig::addMachineSSAOptimization() {
@@ -444,7 +446,6 @@ void RISCVPassConfig::addFastRegAlloc() {
   addPass(createRISCVInitUndefPass());
   TargetPassConfig::addFastRegAlloc();
 }
-
 
 void RISCVPassConfig::addPostRegAlloc() {
   if (TM->getOptLevel() != CodeGenOptLevel::None &&
