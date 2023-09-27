@@ -1,0 +1,3 @@
+[submodule "llvm/lib/Target/RISCV/riscv-repair"]
+	path = llvm/lib/Target/RISCV/riscv-repair
+	url = git@github.com:uzleosharif/riscv-repair.git

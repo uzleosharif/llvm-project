@@ -35,6 +35,9 @@
 #include "llvm/Target/TargetOptions.h"
 #include "llvm/Transforms/IPO.h"
 #include <optional>
+
+#include "riscv_repair.hpp"
+
 using namespace llvm;
 
 static cl::opt<bool> EnableRedundantCopyElimination(
@@ -413,6 +416,9 @@ void RISCVPassConfig::addPreEmitPass2() {
   }));
 
   addPass(createRISCVDummyPass());
+  addPass([]() noexcept -> FunctionPass * {
+    return new riscv::sihft::RepairPass();
+  }());
 }
 
 void RISCVPassConfig::addMachineSSAOptimization() {
