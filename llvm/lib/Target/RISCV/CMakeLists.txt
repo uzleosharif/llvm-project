@@ -26,7 +26,7 @@ tablegen(LLVM RISCVGenPostLegalizeGICombiner.inc -gen-global-isel-combiner
 
 add_public_tablegen_target(RISCVCommonTableGen)
 
-add_subdirectory(Dummy)
+#add_subdirectory(Dummy)
 add_subdirectory(riscv-repair)
 
 add_llvm_target(RISCVCodeGen
@@ -82,12 +82,12 @@ add_llvm_target(RISCVCodeGen
   TargetParser
   TransformUtils
 
-  RISCVDummy
+  #  RISCVDummy
   RISCVRepair
 
   ADD_TO_COMPONENT
   RISCV
-  )
+)
 
 add_subdirectory(AsmParser)
 add_subdirectory(Disassembler)

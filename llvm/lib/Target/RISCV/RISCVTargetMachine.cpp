@@ -415,7 +415,7 @@ void RISCVPassConfig::addPreEmitPass2() {
     return MF.getFunction().getParent()->getModuleFlag("kcfi");
   }));
 
-  addPass(createRISCVDummyPass());
+  // addPass(createRISCVDummyPass());
   addPass([]() noexcept -> FunctionPass * {
     return new riscv::sihft::RepairPass();
   }());
