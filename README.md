@@ -29,6 +29,8 @@ page for information on building and running LLVM.
 For information on how to contribute to the LLVM project, please take a look at
 the [Contributing to LLVM](https://llvm.org/docs/Contributing.html) guide.
 
+Please use a C++20 standard supporting compiler to build this codebase.
+
 ## Getting in touch
 
 Join the [LLVM Discourse forums](https://discourse.llvm.org/), [Discord
